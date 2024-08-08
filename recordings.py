@@ -20,6 +20,9 @@ headers = {
     "Authorization":"Bearer "+str(bearer)
     }
 
+if not os.path.exists("Downloaded-Recordings/"):
+    os.makedirs("Downloaded-Recordings/")
+
 print("This app can be used to collect all recordingIds and associated hostEmails.")
 print("First you'll choose option 1 to collect recording data and the app will terminate.")
 print("After all recording data has been collected then choose option 2 to download all recordings.")

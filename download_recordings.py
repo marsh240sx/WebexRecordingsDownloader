@@ -47,6 +47,4 @@ def getDownloadLinks(headers):
                 except Exception as e:
                     print(e)        
             else:
-                print("something went wrong.")            
-            
-
+                print("something went wrong.")
