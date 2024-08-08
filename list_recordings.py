@@ -24,7 +24,7 @@ def storeRecordings(items):
         print(recordId, hostEmail)
         path = os.path.dirname(os.path.abspath(__file__))
         name = os.path.join(path, 'recordings.csv')
-        with open (name, 'a') as writeRecordings:
+        with open (name, 'a', newline='') as writeRecordings:
             writer = csv.writer(writeRecordings, delimiter=',')
             writer.writerow((recordId, hostEmail))
 
