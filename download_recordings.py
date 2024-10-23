@@ -8,18 +8,13 @@ from pathlib import Path
 dotenv_path = Path('.env')
 load_dotenv(dotenv_path=dotenv_path)
 
-#with open ('token.json', 'r') as openfile:
-#    token = json.load(openfile)
-#    bearer = token["token"]
-#    print('Current Token: '+str(bearer))
-
 def getDownloadLinks(headers):
     recordingDownloadLink = None
     with open ('recordings.csv', 'r') as csvfile:
         recs = csv.reader(csvfile)
         for row in recs:
             id = row[0]
-            hostEmail = row[1].replace('@','%40')
+            hostEmail = row[1].replace('@','%40').replace("+", "%2B")
             print("RecordingId: "+id+", HostEmail: "+hostEmail)
             url = 'https://webexapis.com/v1/recordings/'+id+'?hostEmail='+hostEmail
             #print(url)
